@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:grid;
+        justify-content: center;
+        align-items: center;
+    }
+    h3{
+        text-align: center;
+    }
+    .main{
+        height: 560px;
+        width: 560px;
+        border: 2px solid aqua;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .t{
+        display: flex;
+        flex-flow: row;
+        gap:20px;
+    }
+    .time{
+        width: 90px;
+        display:flex;
+        justify-content: center;
+        border: 1px solid black;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="main">
+        <h3>CLOCK<h3>
+        <div class="t">
+            <div class="time" id="d">Day</div>
+            <div class="time" id="h">Hours</div>
+            <div class="time" id="m">Minutes</div>
+            <div class="time" id="s">Seconds</div>
+        </div>
+        <button onclick="do_t()">CLICK</button>
+        <h3>Notes:</h3>
+        <ol>1d--Monday</ol>
+        <ol>2d--Tuesday</ol>
+        <ol>3d--Wednesday</ol>
+        <ol>4d--Thursday</ol>
+        <ol>5d--Friday</ol>
+        <ol>6d--Saturday</ol>
+        <ol>7d--Sunday</ol>
+    </div>
+<script>
+    function do_t(){
+        setInterval(dt,1000);
+    }
+    function dt(){
+        let da=document.getElementById("d");
+        let ho=document.getElementById("h");
+        let mi=document.getElementById("m");
+        let se=document.getElementById("s");
+        let date=new Date();
+        da.innerHTML=date.getDay()+"d";
+        ho.innerHTML=date.getHours()+"h";
+        mi.innerHTML=date.getMinutes()+"m";
+        se.innerHTML=date.getSeconds()+"s";
+    }
+</script>
+</body>
+</html>

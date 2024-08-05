@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #rect{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+    }
+    .rect{
+        position:absolute;
+        border: 1px solid black;
+        transition:transform 15s ease-in-out;
+    }
+    @keyframes rot {
+        0%{transform: rotate(0deg);}
+        50%{transform: rotate(180deg);}
+        100%{transform: rotate(-180deg);}
+    }
+    #rect:hover .rect{
+        animation: rot 15s ease-in-out;;
+    }
+</style>
+<body>
+    <div id="rect"></div>
+    <script>
+        const rect=document.getElementById("rect");
+        for (let i =0; i <10; i++) {
+            let n=200-(i*20);
+            let d=document.createElement("div");
+            d.className="rect";
+            d.style.width=n +"px";
+            d.style.height=n +"px";
+            d.style.left=(i*10)+"px";
+            d.style.top=(i*10)+"px";
+            d.style.animationDelay=(i*0.2)+"s";
+            rect.appendChild(d);    
+        }
+    </script>
+</body>
+</html>

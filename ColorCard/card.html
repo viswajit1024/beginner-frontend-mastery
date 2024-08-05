@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }*
+    body{
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+    }
+    #first{
+        height: 250px;
+        width: 400px;
+        border-radius: 14px;
+        background-color: black;
+    }
+    #sec{
+        border: 12px solid aqua;
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        position: relative;
+        left: -65px;
+        top: 100px;
+        background-color: yellow;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="first"></div>
+    <button id="sec" onclick="change()"></button>
+</body>
+<script>
+    let a=document.getElementById("first");
+    let b=document.getElementById("sec");
+    function change(){
+        if(a.style.backgroundColor=="yellow"){
+            a.style.backgroundColor="black";
+            b.style.backgroundColor="yellow"
+        }
+        else{
+            a.style.backgroundColor="yellow";
+            b.style.backgroundColor="black"
+        }
+    };
+</script>
+</html>

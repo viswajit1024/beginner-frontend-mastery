@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            background-color: black;
+            align-items: center;
+            justify-content: center;
+        }
+        span{
+            color: purple;
+        }
+        .blink{
+            animation: blink 1s steps(5,start) infinite;
+        }
+        @keyframes blink {
+            to{
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <span>I am a : </span><span id="text"></span><span class="blink">|</span>
+    <script>
+        let a=["Student","Software Engineer","Developer"];
+        let i=0;
+        let j=0;
+        let text=document.getElementById("text");
+        function change(){
+            if (j==a[i].length) {
+                i=(i+1)%a.length;
+                j=0;
+                setTimeout(change,1000);
+            }else{
+                text.innerHTML=a[i].substring(0,j+1);
+                j++;
+                setTimeout(change,100);
+            }
+        }
+        change();
+    </script>
+</body>
+</html>
